@@ -10,7 +10,7 @@ spring-core-4.1.2.RELEASE-javadoc.jar API
 ```
 # IDEA操作
 #### <label style="color:red">快捷键操作</label>
-- `去掉空白： Ctrl + Shift + J ；ctrl alt L 代码格式化` &emsp;`ctrl /注释` &emsp;`ctrl shift /注释一段`
+- `去掉空白： Ctrl + Shift + J ；ctrl alt L 代码格式化` &emsp;`ctrl /注释` &emsp;`ctrl shift /注释一段` &emsp;
 #### 修改文本颜色
 file -> setting ->找到Editor ->color scheme 慢慢找
 #### 添加文件夹
