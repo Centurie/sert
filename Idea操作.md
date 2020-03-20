@@ -8,7 +8,7 @@ spring-core-4.1.2.RELEASE-javadoc.jar API
 	 spring-core-4.1.2.RELEASE-sources.jar 源码
 	 spring-core-4.1.2.RELEASE.jar 运行jar包
 ```
-# IDEA操作
+## IDEA操作
 #### <label style="color:red">快捷键操作</label>
 - `去掉空白： Ctrl + Shift + J ；ctrl alt L 代码格式化` &emsp;`ctrl /注释` &emsp;`ctrl shift /注释一段` &emsp;
 #### 修改文本颜色
@@ -24,7 +24,6 @@ file -> setting ->找到Editor ->color scheme 慢慢找
 #### IDEA创建父子maven工程
 - create project --> maven(不需要模板)，选择project SDK -->GroupId（一般填反转后公司域名）和ArtifactId（项目名）还有Version，这三个属性目的是标识你的项目的唯一性 --> 项目路径最后面前最好再加一个\文件夹名（分类）--> ok <label style="color:red">因为是父工程最好删除src创建子项目</label> -->父工程右击 new module -->选择模板 -->artifactid(输入项目名) next -->要注意路径因为是子工程
 
-# J2EE十三个规范
 # mysql操作
 ### 通过sql文件mysql建表
 - cmd 中  通过命令 mysql -u root -p 进入mysql -->
