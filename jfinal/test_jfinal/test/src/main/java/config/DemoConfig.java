@@ -10,6 +10,9 @@ import model.Blog;
 //用于对整个 web
 //项目进行配置。
 public class DemoConfig extends JFinalConfig {
+//    public static void main(String[] args) {
+//
+//    }
     @Override
     public void configConstant(Constants constants) {
         loadPropertyFile("");//加载少量必要配置(config.properties)，随后可用getproperty()
