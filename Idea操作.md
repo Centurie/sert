@@ -1,4 +1,4 @@
-# 一些基础知识
+﻿# 一些基础知识
 
 1. jar包和war包的区别：war是一个web模块，其中需要包括WEB-INF，是可以直接运行的WEB模块；jar一般只是包括一些class文件，在声明了Main_class之后是可以用java命令运行的。
 2. war是Sun提出的一种Web应用程序格式，也是许多文件的一个压缩包.JAR文件格式以流行的ZIP文件格式为基础。
@@ -15,7 +15,7 @@ spring-core-4.1.2.RELEASE.jar 运行jar包
 
 ### <label style="color:red">快捷键操作</label>
 
-- `去掉空白： Ctrl + Shift + J ；ctrl alt L 代码格式化` &emsp;`ctrl /注释` &emsp;`ctrl shift /注释一段` &emsp;`shift+shift就是查找文件`&emsp;`ctrl+alt+h查看调用层次`
+- `去掉空白： Ctrl + Shift + J ；ctrl alt L 代码格式化` &emsp;`ctrl /注释` &emsp;`ctrl shift /注释一段` &emsp;`shift+shift就是查找文件`&emsp;`ctrl+alt+h查看调用层次`;ctrl t查看被实现被调用
 
 ### 修改文本颜色
 

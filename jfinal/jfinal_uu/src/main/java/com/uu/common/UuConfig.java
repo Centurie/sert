@@ -1,8 +1,6 @@
 package com.uu.common;
 
-
-import com.uu.common.model._MappingKit;
-import com.uu.controller.IndexController;
+import com.uu.controller.LoginController;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
 import com.jfinal.config.Interceptors;
@@ -15,6 +13,7 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.server.undertow.UndertowServer;
 import com.jfinal.template.Engine;
+import com.uu.model._MappingKit;
 
 public class UuConfig extends JFinalConfig {
 
@@ -32,12 +31,27 @@ public class UuConfig extends JFinalConfig {
 			p = PropKit.useFirstFound("demo-config-pro.txt", "demo-config-dev.txt");
 		}
 	}
+	public static DruidPlugin createDruidPlugin() {
+		//加载对配置文件,获取数据库连接信息，供JFinalDemoGenerator调用
+		loadConfig();
+		return new DruidPlugin(p.get("jdbcUrl"), p.get("user"), p.get("password").trim());
+	}
 	/**配置常量*/
 	public void configConstant(Constants me) {
 		loadConfig();
+		// 配置开发模式，true 值为开发模式
 		me.setDevMode(p.getBoolean("devMode", false));
 		me.setInjectDependency(true);
+		// 配置依赖注入时，是否对被注入类的超类进行注入
 		me.setInjectSuperClass(true);
+		// 配置基础下载路径，默认为 webapp 下的 download
+		//me.setBaseDownloadPath();
+		// 配置基础上传路径，默认为 webapp 下的 upload
+		//me.setBaseUploadPath();
+		// 配置 encoding，默认为 UTF8
+		//me.setEncoding("UTF8");
+		// 配置 json 转换 Date 类型时使用的 data parttern
+		me.setJsonDatePattern("yyyy-MM-dd");
 	}
 
 	@Override
@@ -55,7 +69,7 @@ public class UuConfig extends JFinalConfig {
 		public void config() {
 //		让render(...)参数省去baseViewPath这部分前缀
 //			setBaseViewPath("/view/front");
-			add("/", IndexController.class);
+			add("/", LoginController.class);
 			//add("/blog", BlogController.class);
 		}
 	}
@@ -68,20 +82,17 @@ public class UuConfig extends JFinalConfig {
 	public void configPlugin(Plugins me) {
 		// 配置 druid 数据库连接池插件P.get()方法是从静态资源文件读取配置的数据库连接参数
 		DruidPlugin druidPlugin = new DruidPlugin(p.get("jdbcUrl"), p.get("user"), p.get("password").trim());
+//		或者可以new DruidPlugin("jdbc:mysql://localhost/pragmatic", "userName", "password");来连接
 		me.add(druidPlugin);
 
-		// 配置ActiveRecord插件
+		// 配置ActiveRecord插件 该插件方法mapping建立了数据库表名到Model的映射关系。
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(druidPlugin);
 		//arp.addMapping("user",User.class);//将user（数据库表名）与User（模型类）映射关系保存到arp中
 		// 所有映射在 MappingKit 中自动化搞定
 		_MappingKit.mapping(arp);
 		me.add(arp);
 	}
-	public static DruidPlugin createDruidPlugin() {
-		loadConfig();
 
-		return new DruidPlugin(p.get("jdbcUrl"), p.get("user"), p.get("password").trim());
-	}
 
 	/** 配置全局拦截器*/
 	public void configInterceptor(Interceptors me) {

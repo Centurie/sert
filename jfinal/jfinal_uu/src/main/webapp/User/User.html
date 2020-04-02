@@ -1,0 +1,18 @@
+#@layout()
+#define main()
+<h1>Blog管理&nbsp;&nbsp;
+<a href="/blog/add">创建Blog</a>
+</h1>
+<div class="table_box">
+	<table class="list">
+		<tbody>
+		<form action="/User/save" method="post">
+			<input name="User.title" type="text">
+			<input name="User.content" type="text">
+			<input value="提交" type="submit">
+		</form>
+		</tbody>
+	</table>
+	<!--#@paginate(blogPage.pageNumber, blogPage.totalPage, "/blog/")-->
+</div>
+#end
