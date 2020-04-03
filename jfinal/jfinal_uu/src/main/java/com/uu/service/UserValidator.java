@@ -2,7 +2,8 @@ package com.uu.service;
 
 import com.jfinal.core.Controller;
 import com.jfinal.validate.Validator;
-import com.uu.common.base.User;
+import com.uu.model.User;
+
 //验证
 public class UserValidator extends Validator {
     protected void validate(Controller controller) {

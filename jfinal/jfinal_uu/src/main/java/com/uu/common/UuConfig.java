@@ -28,7 +28,7 @@ public class UuConfig extends JFinalConfig {
 //		这是PropKit工具类读取外部键值对配置文件.比如PropKit.use("config.txt");
 //		String userName = PropKit.get("userName");第一次用use加载的配置将成为主配置，可以通过get()直接取值
 //		第二次： Prop p =PropKit.use("db_config.txt");p.get()
-			p = PropKit.useFirstFound("demo-config-pro.txt", "demo-config-dev.txt");
+		p = PropKit.useFirstFound("demo-config-pro.txt", "demo-config-dev.txt");
 		}
 	}
 	public static DruidPlugin createDruidPlugin() {
@@ -85,11 +85,13 @@ public class UuConfig extends JFinalConfig {
 //		或者可以new DruidPlugin("jdbc:mysql://localhost/pragmatic", "userName", "password");来连接
 		me.add(druidPlugin);
 
-		// 配置ActiveRecord插件 该插件方法mapping建立了数据库表名到Model的映射关系。
+		// 配置ActiveRecord插件 该插件方法mapping建立了数据库表名到Model的映射关系。就是DB+ActiveRecord模式
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(druidPlugin);
 		//arp.addMapping("user",User.class);//将user（数据库表名）与User（模型类）映射关系保存到arp中
-		// 所有映射在 MappingKit 中自动化搞定
+		// 所有映射在 MappingKit 中自动化搞定		
 		_MappingKit.mapping(arp);
+		//也可以添加sql模版，不知道啥用
+		//arp.addSqlTemplate("")
 		me.add(arp);
 	}
 

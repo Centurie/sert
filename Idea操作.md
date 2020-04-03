@@ -13,7 +13,7 @@ spring-core-4.1.2.RELEASE.jar 运行jar包
 
 ## IDEA操作
 
-### <label style="color:red">快捷键操作</label>
+### `<label style="color:red">快捷键操作</label>
 
 - `去掉空白： Ctrl + Shift + J ；ctrl alt L 代码格式化` &emsp;`ctrl /注释` &emsp;`ctrl shift /注释一段` &emsp;`shift+shift就是查找文件`&emsp;`ctrl+alt+h查看调用层次`;ctrl t查看被实现被调用
 
@@ -23,18 +23,18 @@ file -> setting ->找到Editor ->color scheme 慢慢找
 
 ### 添加文件夹
 
-- **基础操作** file -->project structure --> modules -->选择文件夹 --> 右击New Folder...创建文件夹后 -->选择上方的 Mark as -->点击Apply <br> &emsp;&emsp;如果弹出报错提示那就是因为父工程中有错误的文件目录.先选中父工程，然后看右边Add Content Root中是否除了Excluded Folders还有其他红色的文件目录，如果有删除就行了
+- **基础操作** file -->project structure --> modules -->选择文件夹 --> 右击New Folder...创建文件夹后 -->选择上方的 Mark as -->点击Apply </br> &emsp;&emsp;如果弹出报错提示那就是因为父工程中有错误的文件目录.先选中父工程，然后看右边Add Content Root中是否除了Excluded Folders还有其他红色的文件目录，如果有删除就行了
 - **添加java文件夹** 在要创建的目录下（目录右击）--> new directory(输入名字) --> 右击mark directory as 相应的（这里sources root）
-- **添加web文件夹** idea => file -> project Structure --> Modules --> 绿色加号 --> Web -->更改Web Resource Directory下面的默认路径，指定webapp路径 <label style="color:red">确定</label>
+- **添加web文件夹** idea => file -> project Structure --> Modules --> 绿色加号 --> Web -->更改Web Resource Directory下面的默认路径，指定webapp路径 `<label style="color:red">确定</label>
 
 ### 添加依赖
 
 - ***maven*** 打开 pom.xml 文件，快捷键 alt + Insert选择 dependency 输入要添加的jar包名或者检索
-- 普通 web --> WEN-INF ->右键 --> New -->Directory -->取名lib 复制相应的jar包 [这只是结构上的] --> <label style="color:red">添加web文件夹步骤前3步或者右上方图标</label> -->libraries-->绿色加号 -->java -->选择modules下的lib -->jar directory(可能是javaweb) -->ok
+- 普通 web --> WEN-INF ->右键 --> New -->Directory -->取名lib 复制相应的jar包 [这只是结构上的] --> `<label style="color:red">添加web文件夹步骤前3步或者右上方图标</label> -->libraries-->绿色加号 -->java -->选择modules下的lib -->jar directory(可能是javaweb) -->ok
 -***验证添加web文件夹操作前4步-选择dependencies可看到lib文件夹且有5条竖线标志***
 
 ### IDEA创建父子maven工程
 
-- create project --> maven(不需要模板)，选择project SDK -->GroupId（一般填反转后公司域名）和ArtifactId（项目名）还有Version，这三个属性目的是标识你的项目的唯一性 --> 项目路径最后面前最好再加一个\文件夹名（分类）--> ok <label style="color:red">因为是父工程最好删除src创建子项目</label> -->父工程右击 new module -->选择模板 -->artifactid(输入项目名) next -->要注意路径因为是子工程
+- create project --> maven(不需要模板)，选择project SDK -->GroupId（一般填反转后公司域名）和ArtifactId（项目名）还有Version，这三个属性目的是标识你的项目的唯一性 --> 项目路径最后面前最好再加一个\文件夹名（分类）--> ok `<label style="color:red">因为是父工程最好删除src创建子项目</label> -->父工程右击 new module -->选择模板 -->artifactid(输入项目名) next -->要注意路径因为是子工程
 
-
+### 项目改名是iml
