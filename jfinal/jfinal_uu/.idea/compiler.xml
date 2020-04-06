@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jfinal_demo_for_maven" />
+        <module name="jfinal_uu" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="jfinal_demo_for_maven" target="1.8" />
+      <module name="jfinal_uu" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
