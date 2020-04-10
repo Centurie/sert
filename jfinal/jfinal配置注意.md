@@ -39,6 +39,8 @@
 Servlet是在第一次发起请求的时候被实例化的
 - web.xml标签详解:`<web-app></web-app>`跟标签
 
+### sql查询
+
 ### .iml文件
 
 idea 对module 配置信息,就是工程配置文件。是当前projec的一些配置信息
