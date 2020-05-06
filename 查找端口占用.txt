@@ -1,0 +1,11 @@
+以查找端口为8100为例子
+
+cmd--> 输入netstat -ano(查看所有端口) -->【第一步】  netstat -ano|findstr "8100"(查找端口8100的情况)【第一步】 
+
+--> listening就是进程号（进程号就是PID 这次是7484）
+
+【第二步】  taskkill -PID 7484 -F（根据PID结束）
+
+--> tasklist|findstr "7484"（查找该进程PID对应的软件）
+
+-- >taskkill /f /t /im java.exe(结束软件)  

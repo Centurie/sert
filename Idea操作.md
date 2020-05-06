@@ -18,6 +18,7 @@ spring-core-4.1.2.RELEASE.jar 运行jar包
 - `去掉空白： Ctrl + Shift + J ；ctrl alt L 代码格式化` &emsp;`ctrl /注释` &emsp;`ctrl shift /注释一段`  
 `//region //endregion就是加注释折叠`&emsp;`ctrl -就是折叠加个shift是全局，+是相反`  
 `shift+shift就是查找文件`&emsp;`ctrl+alt+h查看调用层次`;`ctrl t查看被实现被调用`  
+`ctrl+r替换`
 
 ### 修改文本颜色
 
