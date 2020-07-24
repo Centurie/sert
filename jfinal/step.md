@@ -26,6 +26,26 @@
   3. controller(action),及其要执行的方法,拦截器作为map的value以及配置的actionKey(路由)作为map的key加入到Actionmapping中的mapping中(这就是为什么可根据URL执行响应了)
   4. 6.执行过滤器的doFilter方法，该方法也会在每一次请求的过程中都会拦截我们请求的URI，找到对应的action并从action中拿出具体的controller。
 
+## Service 和 Sql（curd）
+- Service在java目录中 ，Sql文件在resources目录下
+1. Db + Record模式：无需映射，Record相当于一个通用的Model
+   1. 预置
+      > DbBus.save("tableName", record);【record列名和值： record.set("column",value);】  
+       Db.update("uL", u); u = Db.findById("uL",25).set("C", "V");查询id值为25并更新字段
+
+   2. sql语句中用？的[Db(all.sql:包含A.sql的路径), A(A.sql)，B(语句名)]
+      > Db.find(Db.getSql("A.B"),ID,Year);
+      > SELECT * from tableName where  ID=? and Year = ?
+
+   3. sql 语句用para的[kv 参数Kv cond = Kv.by("ID",V);也是存]
+      > Db.find(Db.getSqlPara("A.B",kv));  
+      #sql("B")  
+        	select  * from Basfujupeifa where IsDel=0  
+       	  #if(ID)  
+           	 and ID <=#para(ID)  
+       	  #end  
+	    #end  
+
 ### web容器初始化
 
 - 启动一个WEB项目的时候，WEB容器会去读取它的配置文件web.xml，读取`<context-param>`和`<listener>`结点  
@@ -38,8 +58,6 @@
 - 举例：你可能想在项目启动之前就打开数据库，那么这里就可以在`<context-param>`中设置数据库的连接方式（驱动、url、user、password），在监听类中初始化数据库的连接。  
 Servlet是在第一次发起请求的时候被实例化的
 - web.xml标签详解:`<web-app></web-app>`跟标签
-
-### sql查询
 
 ### .iml文件
 

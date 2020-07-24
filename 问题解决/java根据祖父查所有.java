@@ -1,4 +1,5 @@
-    public String[] getAllSon(String id, Map<String, String> map){
+	// 父id，对应的关系map
+   public String[] getAllSon(String id, Map<String, String> map){
         ListIterator<String> condition = new ArrayList<String>(){{add(id);}}.listIterator();//可变查询条件
         Set<String> set=new HashSet<String>(){{add(id);}};//查询结果 set是[3, 6, 9, 10]
         while (condition.hasNext()){
@@ -14,6 +15,7 @@
                 }
             }
         }
-        String[] result= set.toArray(new String[0]);//基于数组API与collection的API桥梁。数组是从大到小，set是从小到大
+		//new String[0]起模板作用，指定返回类型，长度为set长度。数组是从大到小，set是从小到大
+        String[] result= set.toArray(new String[0]);
         return result;
     }
