@@ -1,1 +1,0 @@
-configPlugin (Plugins me)映射
